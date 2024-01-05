@@ -64,36 +64,83 @@ ul {
     position: relative;
     box-shadow: 0px 1px 6px var(--brandColor);
 }
+/* Lang */
+.menu .lang {
+    margin-left: 25px;
+    position: relative;
+}
+.menu .lang ul {
+    flex-direction: column;
+    position: absolute;
+    z-index: 99999;
+    right: -5px;
+    top: 37px;
+    background-color: var(--lightSetColor);
+    display: none;
+}
+.menu .lang ul.active {
+    display: flex;
+}
+.menu .lang ul::after {
+    content: "";
+    position: absolute;
+    border-width: 13px;
+    border-style: solid;
+    border-color: transparent transparent var(--lightSetColor) transparent;
+    top: -26px;
+    left: 66px;
+}
+.menu .lang ul li {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+.menu .lang ul li:hover {
+    background-color: var(--lightColor);
+}
+.menu .lang ul li p {
+    color: var(--darkSetColor);
+}
+.menu .lang ul li img {
+    width: 25px;
+}
+.menu .lang #lang-icon {
+    color: var(--lightSetColor);
+    font-size: 25px;
+}
+/* Lang */
 .menu-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.menu-content ul {
+.menu-content #menu {
     display: flex;
     align-items: center;
     gap: 25px;
+    margin-left: auto;
 }
 .menu-content #menu-icon {
     display: none;
     color: var(--lightColor);
     font-size: 1.3rem;
 }
-.menu-content ul li a {
+.menu-content #menu li a {
     color: white;
     transition: .3s;
 }
 .active {
     color: var(--brandColor) !important;
 }
-.menu-content ul li a:hover {
+.menu-content #menu li a:hover {
     color: var(--brandColor);
 }
 .menu .logo img {
     width: 90px;
 }
 @media (max-width: 767px) {
-    .menu-content ul {
+    .menu-content #menu {
         position: absolute;
         flex-direction: column;
         top: -200px;
@@ -106,10 +153,11 @@ ul {
         z-index: 99999;
     }
     ul.menu-active {
-        top: 49.2px;
+        top: 49.2px !important;
     }
     .menu-content #menu-icon {
         display: block;
+        margin-left: auto;
     }
 }
 /* Home */

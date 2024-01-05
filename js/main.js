@@ -45,3 +45,23 @@ function scrollToTop() {
 }
 
 document.getElementById("toTop").addEventListener("click", scrollToTop);
+
+// Lang Menu
+
+let langIcon = document.getElementById("lang-icon");
+let langList = document.getElementById("ul-lang");
+
+langIcon.onclick = () => {
+  langList.classList.toggle("active");
+};
+
+let ar = document.getElementById("ar");
+let tr = document.getElementById("tr");
+
+ar.onclick = function () {
+  window.location.href = "index-ar.html";
+};
+
+tr.onclick = function () {
+  window.location.href = "index.html";
+};
